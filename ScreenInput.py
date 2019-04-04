@@ -12,11 +12,26 @@ def RegionOfInterest(img, vertices):
 	return masked
 
 
+def DrawLines(img, roadLine):
+	try:
+		for line in roadLine:
+			
+	except:
+
 def ProcessImg(OriginalImg):
 	ProcessedImg = cv2.cvtColor(OriginalImg, cv2.COLOR_BGR2GRAY)
+
 	ProcessedImg = cv2.Canny(ProcessedImg, threshold1=200, threshold2=300)
+	
+	ProcessedImg = cv2.GaussianBlur(ProcessedImg, (5,5), 0) 
+
 	vertices = np.array([[10,500],[10,300],[300,200],[500,200],[800,300],[800,500]])
 	ProcessedImg = RegionOfInterest(ProcessedImg,[vertices])
+	
+	roadLine = cv2.HoughLinesP(ProcessedImg, 1, np.pi/180, 180, 20, 15)
+	DrawLines(OriginalImg, roadLine)
+
+
 	return ProcessedImg
 
 
