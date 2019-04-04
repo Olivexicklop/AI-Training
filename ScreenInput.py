@@ -28,7 +28,7 @@ def ProcessImg(OriginalImg):
 	vertices = np.array([[10,500],[10,300],[300,200],[500,200],[800,300],[800,500]])
 	ProcessedImg = RegionOfInterest(ProcessedImg,[vertices])
 	
-	roadLine = cv2.HoughLinesP(ProcessedImg, 1, np.pi/180, 180, 20, 15)
+	roadLine = cv2.HoughLinesP(ProcessedImg, 1, np.pi/180, 180, np.array([]), 100, 5)
 	DrawLines(OriginalImg, roadLine)
 
 
