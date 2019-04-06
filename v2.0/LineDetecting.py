@@ -152,16 +152,19 @@ def goLeft():
 	PressKey(A)
 	ReleaseKey(W)
 	ReleaseKey(D)
+    ReleaseKey(A)
 
 def goRight():
 	PressKey(D)
 	ReleaseKey(A)
 	ReleaseKey(W)
+    ReleaseKey(D)
 
 def SlowDown():
 	ReleaseKey(W)
 	ReleaseKey(A)
 	ReleaseKey(D)
+    
 
 
 
