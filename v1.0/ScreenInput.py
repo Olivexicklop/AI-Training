@@ -12,11 +12,11 @@ def RegionOfInterest(img, vertices):
 	return masked
 
 
-def DrawLines(img, roadLine):
-	try:
-		for line in roadLine:
+# def DrawLines(img, roadLine):
+# 	try:
+# 		for line in roadLine:
 			
-	except:
+# 	except:
 
 def ProcessImg(OriginalImg):
 	ProcessedImg = cv2.cvtColor(OriginalImg, cv2.COLOR_BGR2GRAY)
@@ -29,7 +29,7 @@ def ProcessImg(OriginalImg):
 	ProcessedImg = RegionOfInterest(ProcessedImg,[vertices])
 	
 	roadLine = cv2.HoughLinesP(ProcessedImg, 1, np.pi/180, 180, np.array([]), 100, 5)
-	DrawLines(OriginalImg, roadLine)
+	#DrawLines(OriginalImg, roadLine)
 
 
 	return ProcessedImg

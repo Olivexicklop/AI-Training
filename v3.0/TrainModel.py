@@ -22,3 +22,5 @@ test_y = [i[1] for i in test]
 model.fit({'input': x},{'targets': y}, n_epochs=epoch,
 			validation_set=({'input': test_x},{'targets': test_y}),
 			snapshot_step=500, show_metric=True, run_id=model_name)
+
+model.save(model_name)

@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from collections import Count
+from collections import Counter
 from random import shuffle
 import cv2
 
@@ -33,4 +33,4 @@ right = right[:len(forward)]
 final_data = forward + left + right
 shuffle(final_data)
 
-np.save('train_data_new.npy')
+np.save('train_data_new.npy', final_data)
